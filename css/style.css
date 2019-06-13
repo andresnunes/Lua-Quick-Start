@@ -1,0 +1,40 @@
+body{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#navbar{
+	position: fixed;
+	min-width: 300px;
+	top:0px;
+	left:0px;
+	width: 360px;
+	height:100%;
+	border-right:solid;
+	border-color:rgba(0,22,22,0.4);
+}
+
+#main-doc{
+	position: absolute;
+	margin-left:310px;
+	padding:20px;
+	margin-bottom: 110px;
+}
+header{
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 10px;
+}
+
+li{
+    margin-top: 5px;
+    margin-bottom: 5px;    
+}
+
+code{
+    margin: 10px;
+}
+
+@media {
+
+}

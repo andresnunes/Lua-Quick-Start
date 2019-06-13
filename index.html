@@ -1,0 +1,391 @@
+<!Doctype html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>Lua Documentation</h1>
+        </header>
+        <ul>
+            <a class="nav-link" href="#content1" 
+rel="internal"><li>Introduction</li></a>
+            <a class="nav-link" href="#content2" 
+rel="internal"><li>History</li></a>
+            <a class="nav-link" href="#content3" rel="internal"><li>Variables and Types</li></a>
+            <a class="nav-link" href="#content4" rel="internal"><li>Conditionals</li></a>
+            <a class="nav-link" href="#content5" rel="internal"><li>Lorem ipsum</li></a>
+            <a class="nav-link" href="#content6" rel="internal"><li>Lorem ipsum</li></a>
+            <a class="nav-link" href="#content7" rel="internal"><li>Lorem ipsum</li></a>
+            <a class="nav-link" href="#content8" rel="internal"><li>Lorem ipsum</li></a>
+        </ul>
+    </nav>
+	
+    <!--10 p elementos, 5 code elementos, 5 li elementos-->
+    <main id="main-doc">
+        <!--Introduction to Lua-->
+		<section id="content1" class="main-section">
+			<header>Introduction</header>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;Lua is a powerful, efficient, 
+lightweight, embeddable scripting language. It supports procedural programming, 
+object-oriented programming, functional programming, data-driven programming, 
+and data description.
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;Lua combines simple procedural syntax 
+with powerful data description constructs based on associative arrays and 
+extensible semantics. Lua is dynamically typed, runs by interpreting bytecode 
+with a register-based virtual machine, and has automatic memory management with 
+incremental garbage collection, making it ideal for configuration, scripting, 
+and rapid prototyping.
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;Lua is implemented as a library, 
+written in clean C, the common subset of Standard C and C++. The Lua 
+distribution includes a host program called lua, which uses the Lua library to 
+offer a complete, standalone Lua interpreter, for interactive or batch use. Lua 
+is intended to be used both as a powerful, lightweight, embeddable scripting 
+language for any program that needs one, and as a powerful but lightweight and 
+efficient stand-alone language. 
+			</p>		
+        </section>
+        <!--History of Lua-->
+        <section id="content2" class="main-section">
+            <header>History</header>
+            <article>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;Lua was created in 1993 by Roberto 
+Ierusalimschy, Luiz Henrique de Figueiredo, and Waldemar Celes, members of the 
+Computer Graphics Technology Group (Tecgraf) at the Pontifical Catholic 
+University of Rio de Janeiro, in Brazil.
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;From 1977 until 1992, Brazil had a 
+policy of strong trade barriers (called a market reserve) for computer hardware 
+and software. </br>&nbsp;&nbsp;&nbsp;&nbsp;In that atmosphere, Tecgraf's 
+clients could not afford, either politically or financially, to buy customized 
+software from abroad. Those reasons led Tecgraf to implement the basic tools it 
+needed from scratch.
+				</p>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;Lua's predecessors were the 
+data-description/configuration languages SOL (Simple Object Language) and DEL 
+(data-entry language).
+					</br>&nbsp;&nbsp;&nbsp;&nbsp;They had been independently 
+developed at Tecgraf in 1992–1993 to add some flexibility into two different 
+projects (both were interactive graphical programs for engineering applications 
+at Petrobras company). There was a lack of any flow-control structures in SOL 
+and DEL, and Petrobras felt a growing need to add full programming power to 
+them.
+				</p>
+				<h3>Another Details About Lua :</h3>
+				<ul>
+					<li>&nbsp;&nbsp;Lua 1.0 was designed in such a way that its 
+object constructors, being then slightly different from the current light and 
+flexible style, incorporated the data-description syntax of SOL.</li>
+					<li>&nbsp;&nbsp;Lua semantics have been increasingly influenced by Scheme over time, especially with the introduction of anonymous functions and full lexical scoping. Several features were added in new Lua versions.</li>
+					<li>&nbsp;&nbsp;Versions of Lua prior to version 5.0 were 
+released under a license similar to the BSD license. From version 5.0 onwards, 
+Lua has been licensed under the MIT License. Both are permissive free software 
+licences and are almost identical.</li>
+				</ul>
+            </article>
+        </section>
+        <!--Variables and Types on Lua-->
+        <!--Dimínuir o tamanho dos paragrafos e colocar exemplos para cada tipo 
+de varíavel-->
+        <section id="content3" class="main-section">
+            <header>Variables and Types</header>
+            <article>
+                <p>
+                     &nbsp;&nbsp;&nbsp;&nbsp;Variables are places that store values. There are three kinds of variables in Lua: global variables, local variables, and table fields.
+                     <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;A single name can denote a global variable or a local variable (or a function's formal parameter, which is a particular kind of local variable):
+                </p>
+                <code> var ::= Name </code>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Name denotes identifiers. Any variable name is assumed to be global unless explicitly declared as a local. Local variables are lexically scoped: local variables can be freely accessed by functions defined inside their scope.
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Before the first assignment to a variable, its value is nil.
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Square brackets are used to index a table:
+                </p>
+                <code>var ::= prefixexp ‘[’ exp ‘]’</code>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;The meaning of accesses to table fields can be changed via metatables. 
+                    The syntax var. Name is just syntactic sugar for var["Name"]:
+                </p>
+                <code>var ::= prefixexp ‘.’ Name</code>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;An access to a global variable x is equivalent to _ENV.x. Due to the way that chunks are compiled, _ENV is never a global name. 
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lua is a dynamically typed language. This means that variables do not have types; only values do. There are no type definitions in the language. All values carry their own type.
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;All values in Lua are first-class values. This means that all values can be stored in variables, passed as arguments to other functions, and returned as results.       
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;There are eight basic types in Lua: nil, boolean, number, string, function, userdata, thread, and table. 
+                </p>
+                <ul>
+                    <li>
+                        &nbsp;&nbsp;The type nil has one single value, nil, whose main property is to be different from any other value; it usually represents the absence of a useful value. 
+                        <br>
+                        &nbsp;&nbsp;The type boolean has two values, false and true. Both nil and false make a condition false; any other value makes it true. 
+                        <br>
+                        &nbsp;&nbsp;The type number represents both integer numbers and real (floating-point) numbers. 
+                        <br>
+                        &nbsp;&nbsp;The type string represents immutable sequences of bytes. Lua is 8-bit clean: strings can contain any 8-bit value, including embedded zeros ('\0'). 
+                        <br>
+                        &nbsp;&nbsp;Lua is also encoding-agnostic; it makes no assumptions about the contents of a string.                        
+                        <code>
+                            
+                        </code>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;The type number uses two internal representations, or two subtypes, one called integer and the other called float. Lua has explicit rules about when each representation is used, but it also converts between them automatically as needed. Therefore, the programmer may choose to mostly ignore the difference between integers and floats or to assume complete control over the representation of each number. Standard Lua uses 64-bit integers and double-precision (64-bit) floats, but you can also compile Lua so that it uses 32-bit integers and/or single-precision (32-bit) floats. The option with 32 bits for both integers and floats is particularly attractive for small machines and embedded systems.
+                        <code>
+                            
+                        </code>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;The type userdata is provided to allow arbitrary C data to be stored in Lua variables. A userdata value represents a block of raw memory. There are two kinds of userdata: full userdata, which is an object with a block of memory managed by Lua, and light userdata, which is simply a C pointer value. Userdata has no predefined operations in Lua, except assignment and identity test. By using metatables, the programmer can define operations for full userdata values. Userdata values cannot be created or modified in Lua, only through the C API. This guarantees the integrity of data owned by the host program.
+                        <code>
+                            
+                        </code>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;The type thread represents independent threads of execution and it is used to implement coroutines. Lua threads are not related to operating-system threads. Lua supports coroutines on all systems, even those that do not support threads natively.
+                        <code>
+                            
+                        </code>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;The type table implements associative arrays, that is, arrays that can have as indices not only numbers, but any Lua value except nil and NaN. (Not a Number is a special value used to represent undefined or unrepresentable numerical results, such as 0/0.) Tables can be heterogeneous; that is, they can contain values of all types (except nil). Any key with value nil is not considered part of the table. Conversely, any key that is not part of a table has an associated value nil.
+                        <code>
+                            
+                        </code>
+                    </li>
+                </ul>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lua can call (and manipulate) functions written in Lua and functions written in C. Both are represented by the type function.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Tables are the sole data-structuring mechanism in Lua; they can be used to represent ordinary arrays, lists, symbol tables, sets, records, graphs, trees, etc. To represent records, Lua uses the field name as an index. The language supports this representation by providing a.name as syntactic sugar for a["name"]. There are several convenient ways to create tables in Lua.
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Like indices, the values of table fields can be of any type. In particular, because functions are first-class values, table fields can contain functions. Thus tables can also carry methods.
+                </p>
+                
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;The indexing of tables follows the definition of raw equality in the language. The expressions a[i] and a[j] denote the same table element if and only if i and j are raw equal (that is, equal without metamethods). In particular, floats with integral values are equal to their respective integers (e.g., 1.0 == 1). To avoid ambiguities, any float with integral value used as a key is converted to its respective integer. For instance, if you write a[2.0] = true, the actual key inserted into the table will be the integer 2. (On the other hand, 2 and "2" are different Lua values and therefore denote different table entries.)
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Tables, functions, threads, and (full) userdata values are objects: variables do not actually contain these values, only references to them. Assignment, parameter passing, and function returns always manipulate references to such values; these operations do not imply any kind of copy.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;The library function type returns a string describing the type of a given value.
+                </p>
+            </article>
+        </section>
+        <section id="content4" class="main-section">
+            <header>Conditionals</header>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                </ul>
+            </article>
+        </section>
+        <section id="content5" class="main-section">
+            <header>Lorem ipsum dolor sit amet</header>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                </ul>
+            </article>
+        </section>
+        <section id="content6" class="main-section">
+                <header>Lorem ipsum dolor sit amet</header>
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                    </p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                    </ul>
+                </article>
+        </section>
+        <section id="content7" class="main-section">
+                    <header>Lorem ipsum dolor sit amet</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                        </p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem 
+sed risus ultricies tristique.</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem 
+sed risus ultricies tristique.</li>
+                        </ul>
+                    </article>
+        </section>
+        <section id="content8" class="main-section">
+            <header>Lorem ipsum dolor sit amet</header>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat 
+orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique. Scelerisque viverra mauris in aliquam. Dignissim enim sit 
+amet venenatis. Eget aliquet nibh praesent tristique magna sit amet purus. Et 
+egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. At augue eget 
+arcu dictum varius duis at consectetur. Augue lacus viverra vitae congue eu. 
+Fames ac turpis egestas integer eget aliquet. Mattis nunc sed blandit libero 
+volutpat sed. Et sollicitudin ac orci phasellus egestas tellus rutrum. Dui 
+vivamus arcu felis bibendum ut. Ut eu sem integer vitae.
+                </p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Placerat orci nulla pellentesque dignissim enim sit. Vestibulum lorem sed risus 
+ultricies tristique.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
