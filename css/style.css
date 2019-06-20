@@ -27,14 +27,12 @@ header{
 }
 
 li{
+	border:solid black;
+	border-top:1px;
+	border-bottom:1px;
     margin-top: 5px;
     margin-bottom: 5px;    
 }
 
-code{
-    margin: 10px;
-}
 
-@media {
 
-}
