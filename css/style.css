@@ -63,6 +63,38 @@ header{
 	color: #252415;
 }
 
+#main-doc header{
+	max-width: 600px;
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#main-doc p{
+	max-width: 600px;
+	display: block;
+	margin-top:10px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+}
+
+.main-section li{
+	margin-left: 60px;
+	margin-top:30px;
+	font-size:1.1em;
+	list-style-type: disc;
+}
+code{
+	max-width: 400px;
+	display: block;
+	margin-left: 20px;
+	margin-top:15px;
+	border: #555149 solid 1px;
+	padding: 10px;
+	font-size:1.3em;
+	font-family: 'Roboto', sans-serif;
+}
+
 
 @media only screen and (max-width: 780px){
 	#navbar {
