@@ -96,7 +96,7 @@ code{
 }
 
 
-@media only screen and (max-width: 780px){
+@media screen and (max-width: 900px){
 	#navbar {
 		position: absolute;
 		min-width: 200px;

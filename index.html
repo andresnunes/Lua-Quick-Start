@@ -97,63 +97,422 @@
         </section>
 
         <section id="variables" class="main-section">
+            <header>Variables</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;A variable is nothing but a name given to a storage area that our programs can manipulate. It can hold different types of values including functions and tables.
+                <br>
+                The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a letter or an underscore. Upper and lowercase letters are distinct because Lua is case-sensitive. 
             </p>
+            <p>
+                In Lua, though we don't have variable data types, we have three types based on the scope of the variable.
+            </p>
+            <ul>
+                <li>Global variables − All variables are considered global unless explicitly declared as a local.</li>
+                <li>Local variables − When the type is specified as local for a variable then its scope is limited with the functions inside their scope.</li>
+                <li>Table fields − This is a special type of variable that can hold anything except nil including functions.</li>
+            </ul>
         </section>
 
         <section id="declaring" class="main-section">
+            <header>Variable Declaration</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;To declare a variable we will use the follow code:
             </p>
+            <code>
+                --variable declaration':
+                local a = 10; --a is local
+                d, f=5; --f is global, d is nill
+            </code>
         </section>
 
         <section id="scope" class="main-section">
+            <header>Variable Scope</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;Variables can be optionally local or type specified making it global.
             </p>
-        </section>
-
-        <section id="global" class="main-section">
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-        </section>
-
-        <section id="constants" class="main-section">
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
+            <code>
+                local i, j --local variable
+                local i 
+                a, c --global variable
+            </code>
         </section>
 
         <section id="data" class="main-section">
+            <header>Data Types</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp; Lua is a dynamically typed language, so the variables don't have types, only the values have types. Values can be stored in variables, passed as parameters and returned as results.
             </p>
+            <p>The list of data types for values are given below:</p>
+            <ul>
+                <li>nil - Used to differentiate the value from having some data or no(nil) data.</li>
+                <li>boolean - Includes true and false as values. Generally used for condition checking.</li>
+                <li>number - Represents real(double precision floating point) numbers.</li>
+                <li>string - Represents array of characters.</li>
+                <li>function - Represents a method that is written in C or Lua.</li>
+                <li>userdata - Represents arbitrary C data.</li>
+                <li>thread - Represents independent threads of execution and it is used to implement coroutines.</li>
+                <li>table - Represent ordinary arrays, symbol tables, sets, records, graphs, trees, etc., and implements associative arrays. It can hold any value (except nil).</li>
+            </ul>
+
+            <p>To to know the type of the variable we can use the following code:</p>
+            <code>
+                type(5.8*t) --return the type of that variable.
+            </code>
+        </section>
+
+
+        <section id="Operators" class="main-section">
+            <header>Operators</header>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;An operator is a symbol that tells the interpreter to perform specific mathematical or logical manipulations.
+            </p>
+            <p>Arithmetic Operators</p>
+            <table>
+                <tr>
+                    <th>Operators</th>
+                    <th>+</th>
+                    <th>-</th>
+                    <th>*</th>
+                    <th>/</th>
+                    <th>%</th>
+                    <th>^</th>
+                    <th>-</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Adds two operands</th>
+                    <th>Subtracts second operand from the first</th>
+                    <th>Multiply both operands</th>
+                    <th>Divide numerator by de-numerator</th>
+                    <th>Modulus Operator and remainder of after an integer division</th>
+                    <th>Exponent Operator takes the exponents</th>
+                    <th>Unary - operator acts as negation</th>
+                </tr>
+            </table>
+            <p>Relational Operators</p>
+            <table>
+                <tr>
+                    <th>Operators</th>
+                    <th>==</th>
+                    <th>~=</th>
+                    <th>></th>
+                    <th><</th>
+                    <th>>=</th>
+                    <th><=</th>
+                    <th><=</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Checks if the value of two operands are equal or not, if yes then condition becomes true.</th>
+                    <th>Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.</th>
+                    <th>Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.</th>
+                    <th>Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.</th>
+                    <th>Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.</th>
+                    <th>Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.</th>
+                </tr>
+            </table>
+            <p>Logical Operators</p>
+            <table>
+                <tr>
+                    <th>Operators</th>
+                    <th>and</th>
+                    <th>or</th>
+                    <th>not</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Called Logical AND operator. If both the operands are non zero then condition becomes true.</th>
+                    <th>Called Logical OR Operator. If any of the two operands is non zero then condition becomes true.</th>
+                    <th>Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.</th>
+                </tr>
+            </table>
+            <p>Misc Operators</p>
+            <table>
+                <tr>
+                    <th>Operators</th>
+                    <th>..</th>
+                    <th>#</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Concatenates two strings.</th>
+                    <th>An unary operator that return the length of the a string or a table.</th>
+                </tr>
+            </table>
         </section>
 
         <section id="conditionals" class="main-section">
+            <header>Conditionals</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                An if statement consists of a Boolean expression followed by one or more statements.
+            Syntax
+            </p>
+            <p>
+                The syntax of an if statement in Lua programming language is:
+            </p>
+            <code>
+                if(boolean_expression)
+                then
+                   --[ statement(s) will execute if the boolean expression is true --]
+                end
+            </code>
+            <p>
+                If the Boolean expression evaluates to true, then the block of code inside the if statement will be executed. If Boolean expression evaluates to false, then the first set of code after the end of the if statement(after the closing curly brace) will be executed.
+                <br>
+                Lua programming language assumes any combination of Boolean true and non-nil values as true, and if it is either Boolean false or nil, then it is assumed as false value. It is to be noted that in Lua, zero will be considered as true.
+            </p>
+            <p>
+                An if statement can be followed by an optional else statement, which executes when the Boolean expression is false.
+            </p>
+            <p>The syntax of an if...else statement in Lua programming language is:</p>
+            <code>
+                if(boolean_expression)
+                then
+                   --[ statement(s) will execute if the boolean expression is true --]
+                else
+                   --[ statement(s) will execute if the boolean expression is false --]
+                end    
+            </code>
+            <p>
+                If the Boolean expression evaluates to true, then the if block of code will be executed, otherwise else block of code will be executed.
+                <br>
+                Lua programming language assumes any combination of Boolean true and non-nil values as true, and if it is either Boolean false or nil, then it is assumed as false value. It is to be noted that in Lua, zero will be considered as true.
+            </p>
+
+            <p>
+                It is always legal in Lua programming to nest if-else statements, which means you can use one if or else if statement inside another if or else if statement(s).
+            </p>
+            <p>
+                The syntax for a nested if statement is as follows:
+            </p>
+            <code>
+                if( boolean_expression 1)
+                then
+                --[ Executes when the boolean expression 1 is true --]
+                if(boolean_expression 2)
+                then
+                    --[ Executes when the boolean expression 2 is true --]
+                end
+                end
+            </code>
+            <p>
+                You can nest else if...else in the similar way as you have nested if statement.
             </p>
         </section>
 
         <section id="loops" class="main-section">
+            <header>Loops</header>
+
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                The while loop statement in Lua programming language repeatedly executes a target statement as long as a given condition is true.
+                    
+            </p>
+            <p>
+                The syntax of a while loop in Lua programming language is as follows
+            </p>
+            <code>
+                while(condition)
+            do
+               statement(s)
+            end
+        </code>
+            <p>
+                Here, statement(s) may be a single statement or a block of statements. The condition may be any expression, and true is any non-zero value. The loop iterates while the condition is true.
+            </p>
+            <p>
+                When the condition becomes false, the program control passes to the line immediately following the loop.
+            </p>
+            <p>
+                A for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
+            </p>
+            <p>
+                The syntax of a for loop in Lua programming language is as follows:
+            </p>
+            <code>
+                for init,max/min value, increment
+                do
+                   statement(s)
+                end
+            </code>
+            <p>
+                Here is the flow of control in a for loop
+            </p> 
+            <p>
+                The init step is executed first, and only once. This step allows you to declare and initialize any loop control variables.
+                <br>
+                Next, the max/min. This is the maximum or minimum value till which the loop continues to execute. It creates a condition check internally to compare between the initial value and maximum/minimum value.
+                <br>
+                After the body of the for loop executes, the flow of the control jumps back up to the increment/decrement statement. This statement allows you to update any loop control variables.
+                <br>
+                The condition is now evaluated again. If it is true, the loop executes and the process repeats itself (body of loop, then increment step, and then again condition). After the condition becomes false, the for loop terminates.
+            </p>
+
+            <p>
+                Unlike the for and while loops, which test the loop condition at the top of the loop, the repeat...until loop in Lua programming language checks its condition at the bottom of the loop.
+                <br>
+                A repeat...until loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.
+            </p>
+            <p>
+                The syntax of a repeat...until loop in Lua programming language is as follows:
+            </p>
+            <code>
+                repeat
+                    statement(s)
+                until( condition )
+            </code>
+            <p>
+                Notice that the conditional expression appears at the end of the loop, so the statement(s) in the loop execute(s) once before the condition is tested.
+                <br>
+                If the condition is false, the flow of control jumps back up to do, and the statement(s) in the loop execute again. This process repeats until the given condition becomes true.    
+                <br>
+                Lua programming language allows to use one loop inside another loop.
             </p>
         </section>
 
         <section id="function" class="main-section">
+            <header>Functions</header>
             <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                A function is a group of statements that together perform a task. You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division usually unique, is so each function performs a specific task.
+                <br>
+                The Lua language provides numerous built-in methods that your program can call. For example, method print() to print the argument passed as input in console.
+                <br>
+                A function is known with various names like a method or a sub-routine or a procedure etc.
             </p>
+            <p>
+                    The general form of a method definition in Lua programming language is as follows:
+            </p>
+            <code>
+                optional_function_scope function function_name( argument1, argument2, argument3........, 
+            argumentn)
+                function_body
+                return result_params_comma_separated
+                end
+            </code>
+            <p>
+                A method definition in Lua programming language consists of a method header and a method body. Here are all the parts of a method:
+            </p>
+            <ul>
+                <li>
+                    Optional Function Scope − You can use keyword local to limit the scope of the function or ignore the scope section, which will make it a global function.
+                </li>
+                <li>
+                    Function Name − This is the actual name of the function. The function name and the parameter list together constitute the function signature.
+                </li>
+                <li>
+                    Arguments − An argument is like a placeholder. When a function is invoked, you pass a value to the argument. This value is referred to as the actual parameter or argument. The parameter list refers to the type, order, and number of the arguments of a method. Arguments are optional; that is, a method may contain no argument.
+                </li>
+                <li>
+                    Function Body − The method body contains a collection of statements that define what the method does.
+                </li>
+                <li>
+                    Return − In Lua, it is possible to return multiple values by following the return keyword with the comma separated return values.
+                </li>
+            </ul>
+            <p>Example:</p>
+            <code>
+                --[[ function returning the max between two numbers --]]
+                function max(num1, num2)
+                
+                if (num1 > num2) then
+                    result = num1;
+                else
+                    result = num2;
+                end
+                
+                return result; 
+                end
+            </code>
+            <p>Function Arguments</p>
+            <p>
+                If a function is to use arguments, it must declare the variables that accept the values of the arguments. These variables are called the formal parameters of the function.
+                <br>
+                The formal parameters behave like other local variables inside the function and are created upon entry into the function and destroyed upon exit.
+            </p>
+            <p>Calling a Function</p>
+            <p>
+                While creating a Lua function, you give a definition of what the function has to do. To use a method, you will have to call that function to perform the defined task.
+                <br>
+                When a program calls a function, program control is transferred to the called function. A called function performs the defined task and when its return statement is executed or when its function's end is reached, it returns program control back to the main program.
+                <br>
+                To call a method, you simply need to pass the required parameters along with the method name and if the method returns a value, then you can store the returned value. 
+            </p>            
+            <p>Live Demo</p>
+            <code> 
+                function max(num1, num2)
+                
+                   if (num1 > num2) then
+                      result = num1;
+                   else
+                      result = num2;
+                   end
+                
+                   return result; 
+                end
+            
+                -- calling a function
+                print("The maximum of the two numbers is ",max(10,4))
+                print("The maximum of the two numbers is ",max(5,6))
+            </code>
+            <p>
+                When we run the above code, we will get the following output.
+            </p>
+            <code>
+                The maximum of the two numbers is 	10
+                The maximum of the two numbers is 	6
+            </code>
+            <p>Assigning and Passing Functions</p>
+            <p>
+                In Lua, we can assign the function to variables and also can pass them as parameters of another function. Here is a simple example for assigning and passing a function as parameter in Lua.
+            </p>
+            <p>Live Demo</p>
+            <code>
+                myprint = function(param)
+                print("This is my print function -   ##",param,"##")
+                end
+                
+                function add(num1,num2,functionPrint)
+                result = num1 + num2
+                functionPrint(result)
+                end
+                
+                myprint(10)
+                add(2,5,myprint)
+            </code>
+            <p>
+                When we run the above code, we will get the following output.
+            </p>
+            <code>
+                This is my print function -   ##	10	##
+                This is my print function -   ##	7	##
+            </code>
+            <p>Function with Variable Argument</p>
+            <p>
+                It is possible to create functions with variable arguments in Lua using '...' as its parameter. We can get a grasp of this by seeing an example in which the function will return the average and it can take variable arguments.
+            </p>
+            <p>Live Demo</p>
+            <code>
+                function average(...)
+                result = 0
+                local arg = {...}
+                for i,v in ipairs(arg) do
+                    result = result + v
+                end
+                return result/#arg
+                end
+
+                print("The average is",average(10,5,3,4,5,6))
+            </code>
+            <p>
+                When we run the above code, we will get the following output.
+            </p>
+            <code> The average is 5.5</code>
         </section>
 
         <section id="reference" class="main-section">
             <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;
             </p>
+            <a>https://www.tutorialspoint.com/lua/index.htm</a>
         </section>
     </main>
 </body>
