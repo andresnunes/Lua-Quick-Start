@@ -1,6 +1,6 @@
 body{
 	background-color: #F8F8FF;
-	width:90%;
+	width:85%;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -19,8 +19,8 @@ body{
 
 #main-doc{
 	position: absolute;
-	margin-left:310px;
 	padding: 20px;
+	margin-left:310px;
 	margin-bottom: 110px;
 }
 
@@ -31,7 +31,7 @@ header{
 }
 
 #navbar header{
-	font-size: 2em;
+	font-size: 1.5em;
 	font-style: oblique;
 	text-align: center;
 	margin-bottom: 10px;
@@ -71,11 +71,15 @@ header{
 }
 
 #main-doc p{
-	max-width: 600px;
+	max-width: 1000px;
 	display: block;
 	margin-top:10px;
 	margin-bottom: 10px;
 	font-size: 1.2em;
+}
+
+#main-doc ul{
+	max-width: 950px;
 }
 
 .main-section li{
@@ -85,7 +89,7 @@ header{
 	list-style-type: disc;
 }
 code{
-	max-width: 400px;
+	max-width: 900px;
 	display: block;
 	margin-left: 20px;
 	margin-top:15px;
@@ -95,6 +99,9 @@ code{
 	font-family: 'Roboto', sans-serif;
 }
 
+th{
+	border:2px solid ;
+}
 
 @media screen and (max-width: 900px){
 	#navbar {
@@ -118,7 +125,18 @@ code{
 	#main-doc{
 		position: relative;
 		margin-left: 0px;
-		margin-top: 250px;
+		margin-top: 300px;
 	}
 
+}
+
+@media screen and (max-width:700px){
+	body{
+		width: 100%;
+	}
+	th{
+		display:inline-flexbox;
+		border:2px solid ;
+		font-size: 10px;
+	}	
 }
